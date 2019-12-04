@@ -23,7 +23,7 @@ namespace AdventOfCode2019.Day1
 
         private static IEnumerable<Module> ReadInput()
         {
-            using (var stream = InputHelper.GetInputStream("Day1.input.txt"))
+            using (var stream = InputHelper.GetInputTxtStream())
             using (var reader = new StreamReader(stream))
             {
                 while (!reader.EndOfStream)

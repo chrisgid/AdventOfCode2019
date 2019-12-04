@@ -1,24 +1,22 @@
-﻿using System.IO;
-using System.Reflection;
+﻿using System.Diagnostics;
+using System.IO;
 
 namespace AdventOfCode2019
 {
     public static class InputHelper
     {
-        public static Stream GetInputStream(string embeddedResource)
+        /// <summary>
+        /// Creates a Stream for the embedded input.txt from the same namespace as the calling class
+        /// </summary>
+        public static Stream GetInputTxtStream()
         {
-            var assembly = Assembly.GetExecutingAssembly();
+            var frame = new StackFrame(1);
+            var callingMethod = frame.GetMethod();
+            var type = callingMethod.DeclaringType;
+            var typeNamespace = type.Namespace;
+            var assembly = type.Assembly;
 
-            var resourceName = FormatResourceName(assembly, embeddedResource);
-
-            return assembly.GetManifestResourceStream(resourceName);
-        }
-
-        private static string FormatResourceName(Assembly assembly, string resourceName)
-        {
-            return assembly.GetName().Name + "." + resourceName.Replace(" ", "_")
-                                                                .Replace("\\", ".")
-                                                                .Replace("/", ".");
+            return assembly.GetManifestResourceStream($"{typeNamespace}.input.txt");
         }
     }
 }
