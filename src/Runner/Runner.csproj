@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Day1\Day1.csproj">
+    <ProjectReference Include="..\AdventOfCode2019\AdventOfCode2019.csproj">
       <Project>{5bf6a5b4-15db-4ee9-a296-60167fbe917a}</Project>
-      <Name>Day1</Name>
+      <Name>AdventOfCode2019</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

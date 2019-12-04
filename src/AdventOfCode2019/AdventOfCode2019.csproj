@@ -7,8 +7,8 @@
     <ProjectGuid>{5BF6A5B4-15DB-4EE9-A296-60167FBE917A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Day1</RootNamespace>
-    <AssemblyName>Day1</AssemblyName>
+    <RootNamespace>AdventOfCode2019</RootNamespace>
+    <AssemblyName>AdventOfCode2019</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,19 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FuelCounterUpper.cs" />
-    <Compile Include="Module.cs" />
-    <Compile Include="Answer.cs" />
+    <Compile Include="BaseDay.cs" />
+    <Compile Include="Day1\FuelCounterUpper.cs" />
+    <Compile Include="Day1\Module.cs" />
+    <Compile Include="Day1\Day1.cs" />
+    <Compile Include="InputHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="input.txt" />
+    <EmbeddedResource Include="Day1\input.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Help\Help.csproj">
-      <Project>{353c5a66-9028-47b2-9a64-f1d00947b241}</Project>
-      <Name>Help</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,23 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using Help;
 
-namespace Day1
+namespace AdventOfCode2019.Day1
 {
-    public static class Answer
+    public class Day1 : BaseDay
     {
-        public static string Get()
+        public override string GetAnswer(int part)
         {
             var fuelCounterUpper = new FuelCounterUpper();
             var fuelCount = fuelCounterUpper.GetFuelCount(ReadInput());
 
-            return fuelCount.ToString();
+            if (part == 1)
+            {
+                return fuelCount.ToString();
+            }
+
+            return base.GetAnswer(part);
         }
 
         private static IEnumerable<Module> ReadInput()
         {
-            using (var stream = InputHelper.GetInputStream())
+            using (var stream = InputHelper.GetInputStream("Day1.input.txt"))
             using (var reader = new StreamReader(stream))
             {
                 while (!reader.EndOfStream)

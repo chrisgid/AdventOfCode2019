@@ -1,4 +1,4 @@
-﻿namespace Day1
+﻿namespace AdventOfCode2019.Day1
 {
     public class Module
     {
