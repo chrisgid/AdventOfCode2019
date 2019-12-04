@@ -5,17 +5,20 @@ namespace AdventOfCode2019.Day1
 {
     public class Day1 : BaseDay
     {
-        public override string GetAnswer(int part)
+        public override string GetPartOneAnswer()
         {
             var fuelCounterUpper = new FuelCounterUpper();
             var fuelCount = fuelCounterUpper.GetFuelCount(ReadInput());
 
-            if (part == 1)
-            {
-                return fuelCount.ToString();
-            }
+            return fuelCount.ToString();
+        }
 
-            return base.GetAnswer(part);
+        public override string GetPartTwoAnswer()
+        {
+            var fuelCounterUpper = new FuelCounterUpper();
+            var fuelCount = fuelCounterUpper.GetActualFuelCount(ReadInput());
+
+            return fuelCount.ToString();
         }
 
         private static IEnumerable<Module> ReadInput()

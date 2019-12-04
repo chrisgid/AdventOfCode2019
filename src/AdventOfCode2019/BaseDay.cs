@@ -2,9 +2,14 @@
 {
     public abstract class BaseDay
     {
-        public virtual string GetAnswer(int part)
+        public virtual string GetPartOneAnswer()
         {
-            return $"Part {part} not yet answered";
+            return "Part 1 not yet answered";
+        }
+
+        public virtual string GetPartTwoAnswer()
+        {
+            return "Part 2 not yet answered";
         }
     }
 }

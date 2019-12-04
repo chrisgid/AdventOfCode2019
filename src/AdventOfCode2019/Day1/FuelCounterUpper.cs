@@ -30,22 +30,14 @@ namespace AdventOfCode2019.Day1
 
         public int CalculateFuelCountFor(int mass)
         {
-            var totalRequiredFuel = 0;
-            totalRequiredFuel += (mass / 3) - 2;
+            var fuelCount = (mass / 3) - 2;
 
-            while (true)
+            if (fuelCount <= 0)
             {
-                var requiredFuel = (totalRequiredFuel / 3) - 2;
-
-                if (requiredFuel <= 0)
-                {
-                    break;
-                }
-
-                totalRequiredFuel += requiredFuel;
+                return 0;
             }
 
-            return totalRequiredFuel;
+            return fuelCount + CalculateFuelCountFor(fuelCount);
         }
     }
 }

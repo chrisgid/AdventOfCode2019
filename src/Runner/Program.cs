@@ -8,8 +8,8 @@ namespace Runner
         public static void Main(string[] args)
         {
             Console.WriteLine("Day 1:");
-            Console.WriteLine(new Day1().GetAnswer(1));
-            Console.WriteLine(new Day1().GetAnswer(2));
+            Console.WriteLine(new Day1().GetPartOneAnswer());
+            Console.WriteLine(new Day1().GetPartTwoAnswer());
 
             Console.ReadKey();
         }
