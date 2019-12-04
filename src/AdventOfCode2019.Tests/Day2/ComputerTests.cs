@@ -19,7 +19,8 @@ namespace AdventOfCode2019.Tests.Day2
         {
             var computer = new Computer();
 
-            var result = computer.Run(initialState);
+            computer.Run(initialState, initialState[1], initialState[2]);
+            var result = computer.GetMemory();
 
             Assert.AreEqual(finalState, result);
         }

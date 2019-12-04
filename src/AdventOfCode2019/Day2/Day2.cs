@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventOfCode2019.Day2
 {
@@ -12,18 +8,37 @@ namespace AdventOfCode2019.Day2
         public override string GetPartOneAnswer()
         {
             var program = ReadInput();
-            program[1] = 12;
-            program[2] = 2;
 
             var computer = new Computer();
-            var outputState = computer.Run(program);
+            var output = computer.Run(program, 12, 2);
 
-            return outputState[0].ToString();
+            return output.ToString();
         }
 
         public override string GetPartTwoAnswer()
         {
-            return base.GetPartTwoAnswer();
+            const int wantedOutput = 19690720;
+            var program = ReadInput();
+
+            var computer = new Computer();
+            var input1 = 0;
+            var input2 = 0;
+
+            for (; input1 < 100; input1++)
+            {
+                for (input2 = 0; input2 < 100; input2++)
+                {
+                    var output = computer.Run(program, input1, input2);
+
+                    if (output == wantedOutput)
+                    {
+                        goto end;
+                    }
+                }
+            }
+            end:
+
+            return $"{input1:00}{input2:00}";
         }
 
         public int[] ReadInput()
