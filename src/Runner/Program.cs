@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using AdventOfCode2019;
 using AdventOfCode2019.Day1;
 using AdventOfCode2019.Day2;
 using AdventOfCode2019.Day3;
@@ -9,17 +11,20 @@ namespace Runner
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Day 1:");
-            Console.WriteLine(new Day1().GetPartOneAnswer());
-            Console.WriteLine(new Day1().GetPartTwoAnswer());
+            var days = new List<BaseDay>
+            {
+                new Day1(),
+                new Day2(),
+                new Day3()
+            };
 
-            Console.WriteLine("Day 2:");
-            Console.WriteLine(new Day2().GetPartOneAnswer());
-            Console.WriteLine(new Day2().GetPartTwoAnswer());
-
-            Console.WriteLine("Day 3:");
-            Console.WriteLine(new Day3().GetPartOneAnswer());
-            Console.WriteLine(new Day3().GetPartTwoAnswer());
+            for (var i = 0; i < days.Count; i++)
+            {
+                var day = days[i];
+                Console.WriteLine($"Day {i}:");
+                Console.WriteLine("  " + day.GetPartOneAnswer());
+                Console.WriteLine("  " + day.GetPartTwoAnswer());
+            }
 
             Console.ReadKey();
         }
