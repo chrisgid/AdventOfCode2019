@@ -52,6 +52,8 @@
     <Compile Include="Day3\CoordinateHelper.cs" />
     <Compile Include="Day3\Wire.cs" />
     <Compile Include="Day3\WireSection.cs" />
+    <Compile Include="Day4\Day4.cs" />
+    <Compile Include="Day4\PasswordValidator.cs" />
     <Compile Include="InputHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Day3\input.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Day4\input.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
