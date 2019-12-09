@@ -11,13 +11,28 @@ namespace AdventOfCode2019.Day3
         {
             var wires = ReadInput();
 
+            var wire1Coordinates = CoordinateHelper.GenerateFrom(wires.Item1);
+            var wire2Coordinates = CoordinateHelper.GenerateFrom(wires.Item2);
 
-            return base.GetPartOneAnswer();
+            var intersections = CoordinateHelper.IntersectAndAddSteps(wire1Coordinates, wire2Coordinates);
+
+            var smallestManhattan = CoordinateHelper.GetSmallestManhattan(intersections);
+
+            return smallestManhattan.ToString();
         }
 
         public override string GetPartTwoAnswer()
         {
-            return base.GetPartTwoAnswer();
+            var wires = ReadInput();
+
+            var wire1Coordinates = CoordinateHelper.GenerateFrom(wires.Item1);
+            var wire2Coordinates = CoordinateHelper.GenerateFrom(wires.Item2);
+
+            var intersections = CoordinateHelper.IntersectAndAddSteps(wire1Coordinates, wire2Coordinates);
+
+            var smallestSteps = CoordinateHelper.GetSmallestSteps(intersections);
+
+            return smallestSteps.ToString();
         }
 
         private static Tuple<Wire, Wire> ReadInput()
@@ -39,7 +54,7 @@ namespace AdventOfCode2019.Day3
                 var split = Regex.Split(s, @"(?<=[UDLR])");
                 var direction = char.Parse(split[0]);
                 var distance = int.Parse(split[1]);
-                wires.Item1.Path.Add(new Tuple<char, int>(direction, distance));
+                wires.Item1.Path.Add(new WireSection(direction, distance));
             }
 
             foreach (var s in lines[1])
@@ -47,7 +62,7 @@ namespace AdventOfCode2019.Day3
                 var split = Regex.Split(s, @"(?<=[UDLR])");
                 var direction = char.Parse(split[0]);
                 var distance = int.Parse(split[1]);
-                wires.Item2.Path.Add(new Tuple<char, int>(direction, distance));
+                wires.Item2.Path.Add(new WireSection(direction, distance));
             }
 
             return wires;

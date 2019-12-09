@@ -47,8 +47,11 @@
     <Compile Include="Day1\Day1.cs" />
     <Compile Include="Day2\Computer.cs" />
     <Compile Include="Day2\Day2.cs" />
+    <Compile Include="Day3\Coordinate.cs" />
     <Compile Include="Day3\Day3.cs" />
+    <Compile Include="Day3\CoordinateHelper.cs" />
     <Compile Include="Day3\Wire.cs" />
+    <Compile Include="Day3\WireSection.cs" />
     <Compile Include="InputHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace AdventOfCode2019.Day3
 {
@@ -7,9 +6,9 @@ namespace AdventOfCode2019.Day3
     {
         public Wire()
         {
-            Path = new List<Tuple<char,int>>();
+            Path = new List<WireSection>();
         }
 
-        public List<Tuple<char,int>> Path { get; set; }
+        public List<WireSection> Path { get; set; }
     }
 }
