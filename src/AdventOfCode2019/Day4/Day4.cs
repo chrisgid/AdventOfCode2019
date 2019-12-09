@@ -10,9 +10,13 @@ namespace AdventOfCode2019.Day4
             var (startRange, endRange) = ReadInput();
             var validCount = 0;
 
+            var validator = new PasswordValidator();
+            validator.AddRule(Rules.HasIncreasingDigits);
+            validator.AddRule(Rules.HasAdjacentDigits);
+
             for (var i = startRange; i <= endRange; i++)
             {
-                if (PasswordValidator.IsValid(i))
+                if (validator.Validate(i))
                 {
                     validCount++;
                 }
@@ -23,7 +27,22 @@ namespace AdventOfCode2019.Day4
 
         public override string GetPartTwoAnswer()
         {
-            return base.GetPartTwoAnswer();
+            var (startRange, endRange) = ReadInput();
+            var validCount = 0;
+
+            var validator = new PasswordValidator();
+            validator.AddRule(Rules.HasIncreasingDigits);
+            //validator.AddRule(Rules.HasPartTwoAdjacentDigits);
+
+            for (var i = startRange; i <= endRange; i++)
+            {
+                if (validator.Validate(i))
+                {
+                    validCount++;
+                }
+            }
+
+            return validCount.ToString();
         }
 
         private static Tuple<int, int> ReadInput()

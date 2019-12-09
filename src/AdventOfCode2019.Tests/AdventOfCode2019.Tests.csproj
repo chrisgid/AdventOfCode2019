@@ -51,6 +51,7 @@
     <Compile Include="Day3\CoordinateHelperTests.cs" />
     <Compile Include="Day1\FuelCounterUpperTests.cs" />
     <Compile Include="Day2\ComputerTests.cs" />
+    <Compile Include="Day4\RulesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
