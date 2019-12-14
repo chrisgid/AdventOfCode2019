@@ -29,5 +29,16 @@ namespace AdventOfCode2019.Tests.Day4
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase(112233, true)]
+        [TestCase(123444, false)]
+        [TestCase(111122, true)]
+        [TestCase(441244, true)]
+        public void HasPartTwoAdjacentDigitsTests(int password, bool expected)
+        {
+            var actual = Rules.HasPartTwoAdjacentDigits(password);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

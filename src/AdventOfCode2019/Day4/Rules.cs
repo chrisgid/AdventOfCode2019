@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode2019.Day4
+﻿using System;
+
+namespace AdventOfCode2019.Day4
 {
     public static class Rules
     {
@@ -44,6 +46,13 @@
             }
 
             return true;
+        }
+
+        public static bool HasPartTwoAdjacentDigits(int password)
+        {
+
+
+            return false;
         }
     }
 }
