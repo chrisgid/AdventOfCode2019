@@ -32,7 +32,7 @@ namespace AdventOfCode2019.Day4
 
             var validator = new PasswordValidator();
             validator.AddRule(Rules.HasIncreasingDigits);
-            //validator.AddRule(Rules.HasPartTwoAdjacentDigits);
+            validator.AddRule(Rules.HasPartTwoAdjacentDigits);
 
             for (var i = startRange; i <= endRange; i++)
             {

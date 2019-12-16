@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AdventOfCode2019.Day4
+﻿namespace AdventOfCode2019.Day4
 {
     public static class Rules
     {
@@ -50,7 +48,38 @@ namespace AdventOfCode2019.Day4
 
         public static bool HasPartTwoAdjacentDigits(int password)
         {
+            var lastDigit = password % 10;
+            var passwordMinusLastDigit = password / 10;
 
+            var adjacentDigitCount = 1;
+            var nextLastDigit = 0;
+
+            while (passwordMinusLastDigit > 0)
+            {
+                nextLastDigit = passwordMinusLastDigit % 10;
+
+                if (lastDigit == nextLastDigit)
+                {
+                    adjacentDigitCount++;
+                }
+                else if (lastDigit != nextLastDigit && adjacentDigitCount == 2)
+                {
+                    return true;
+                }
+                else
+                {
+                    adjacentDigitCount = 1;
+                }
+
+                lastDigit = nextLastDigit;
+
+                passwordMinusLastDigit /= 10;
+            }
+
+            if (lastDigit == nextLastDigit && adjacentDigitCount == 2)
+            {
+                return true;
+            }
 
             return false;
         }

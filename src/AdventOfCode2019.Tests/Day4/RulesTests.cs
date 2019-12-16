@@ -34,6 +34,9 @@ namespace AdventOfCode2019.Tests.Day4
         [TestCase(123444, false)]
         [TestCase(111122, true)]
         [TestCase(441244, true)]
+        [TestCase(999999, false)]
+        [TestCase(211111, false)]
+        [TestCase(223450, true)]
         public void HasPartTwoAdjacentDigitsTests(int password, bool expected)
         {
             var actual = Rules.HasPartTwoAdjacentDigits(password);
