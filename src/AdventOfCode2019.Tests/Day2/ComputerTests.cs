@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AdventOfCode2019.Day2;
+﻿using AdventOfCode2019.Day2;
 using NUnit.Framework;
 
 namespace AdventOfCode2019.Tests.Day2

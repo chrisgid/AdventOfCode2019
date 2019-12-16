@@ -41,7 +41,7 @@ namespace AdventOfCode2019.Day2
             return $"{input1:00}{input2:00}";
         }
 
-        public int[] ReadInput()
+        private static int[] ReadInput()
         {
             string input;
 
